@@ -1,7 +1,8 @@
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
+COPY . .
 
-COPY target/grade-app-1.0.jar app.jar
+RUN javac Grade.java
 
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "Grade"]
